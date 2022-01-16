@@ -5,7 +5,7 @@ const app = express();
 
 const controller = require("./Controller/Controller");
 
-const middleware = require("./Middleware/Middlewares");
+const middleware = require("./Middlewares/Middlewares");
 
 const con = require("./Database/Database");
 
