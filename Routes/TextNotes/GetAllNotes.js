@@ -1,3 +1,4 @@
+//get all file data by user from database
 
 const TextNote = require("../../Database/Schema/TextNotesSchema");
 
@@ -9,7 +10,7 @@ module.exports = async (req, res) => {
     
     const user = req.headers.user;
 
-    const text_notes = await TextNote.findByUser(user);
+    const text_notes = await TextNote.find().byUser(user);
 
     return res.send(text_notes);
 

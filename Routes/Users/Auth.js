@@ -35,7 +35,9 @@ module.exports = async (req, res) => {
 
             message: `Welcome ${user[0].name} ${user[0].last_name}`,
 
-            token
+            token,
+
+            user: `${user[0].name} ${user[0].last_name}`
 
         });
 
