@@ -13,6 +13,10 @@ module.exports = async (req, res) => {
 
         return res.status(400).send({message: "Incomplete data"});
 
+    if(!/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(req.body.email))
+
+        return res.status(400).send({message: "Invalid email"});
+
     const user = await User.byEmail(req.body.email);
 
     if(!user[0])
